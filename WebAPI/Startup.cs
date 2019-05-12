@@ -41,7 +41,7 @@ namespace WebAPI
 
 			app.UseMvc();
 
-			AppMigration.MakeSureDatabaseCreated(new MongoClient(AppSettings.ConnectionString)).ConfigureAwait(true);
+			AppMigration.Run(new MongoClient(AppSettings.ConnectionString)).Wait();
 		}
 	}
 }

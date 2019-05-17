@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 /AngularUI/e2e
 /WebAPI/wwwroot
+/WebAPI/Properties/PublishProfiles/FolderProfile.pubxml

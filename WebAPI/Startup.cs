@@ -6,22 +6,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Driver;
+using WebAPI.Configurations;
 
 namespace WebAPI
 {
 	public class Startup
 	{
-		private IConfiguration _configuration;
 		public Startup(IConfiguration configuration)
 		{
-			_configuration = configuration;
-
 			configuration.Get<AppSettings>(options => options.BindNonPublicProperties = true);
 		}
 
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddOptions();
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 		}
 
@@ -38,6 +37,8 @@ namespace WebAPI
 				app.UseHsts();
 				app.UseHttpsRedirection();
 			}
+
+			app.UseSinglePage();
 
 			app.UseMvc();
 

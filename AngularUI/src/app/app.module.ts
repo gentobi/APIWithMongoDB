@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LandingPageComponent } from './modules/LandingPage/landing-page.component';
+import { LandingPageComponent } from './modules/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
